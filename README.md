@@ -1,4 +1,4 @@
-# My Node Static Server starter projects
+# My Node Static Server starter project
 
 ### Includes
 * Node
