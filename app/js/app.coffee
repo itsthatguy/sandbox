@@ -45,7 +45,6 @@ App.chats = App.ChatsArray.create()
 # ChatController
 App.ChatTabsController = Ember.ArrayController.extend
 
-
 # ChatController
 App.ChatController = Ember.ArrayController.extend
   needs: "application"
@@ -76,6 +75,7 @@ App.ChatTabsView = Ember.CollectionView.extend
   classNames: ["chat-tabs-thing"]
   content: ["hi", "no"]
   itemViewClass: App.ChatTabView
+
 
 App.ChatTabView = Ember.View.extend
   templateName: "chat-tabs"
