@@ -1,9 +1,58 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Firepit</title>
+  <meta charset="utf-8">
+  <title>JS Bin</title>
+  <link rel="stylesheet" href="/assets/css/main.css">
 </head>
 <body>
-  <h1>Hello World</h1>
+  <script type="text/x-handlebars">
+    <h2>Simple chat</h2>
+
+    {{view App.ChatTabsView}}
+
+    {{#link-to "index"}}index{{/link-to}}
+    {{#link-to "chat" "#vikinghug"}}#vikinghug{{/link-to}}
+    {{#link-to "chat" "#switchboard"}}#switchboard{{/link-to}}
+
+    {{outlet}}
+  </script>
+
+
+  <script type="text/x-handlebars" data-template-name="index">
+    <p>Please select a chatroom above</p>
+  </script>
+
+  <script type="text/x-handlebars" data-template-name="chat">
+
+
+
+    {{#scrolling-div id="messages-div"}}
+      <ul>
+      {{#each}}
+        <li>{{this}}</li>
+      {{/each}}
+      </ul>
+    {{/scrolling-div}}
+    {{ input value=msg id="newMessage" action="sendMessage"}}
+  </script>
+
+  <script type="text/x-handlebars" data-template-name="chat-tabs">
+    really?
+    yep
+    {{#each}}
+      hi
+    {{/each}}
+  </script>
+
+  <script type="text/x-handlebars" id="components/scrolling-div">
+    {{yield}}
+  </script>
+
+
+<script src="/vendor/jquery/dist/jquery.min.js"></script>
+<script src="/vendor/handlebars/handlebars.js"></script>
+<script src="/vendor/ember/ember.js"></script>
+<script src="/assets/js/app.js"></script>
 </body>
 </html>

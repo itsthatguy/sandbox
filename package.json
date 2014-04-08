@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "coffee app.coffee",
+    "start": "./node_modules/.bin/coffee app.coffee",
     "preinstall": "bower install"
   },
   "author": "",
@@ -22,6 +22,8 @@
     "gulp-stylus": "^0.1.0",
     "gulp-util": "^2.2.14",
     "coffeeify": "^0.6.0",
-    "stylus": "^0.42.3"
+    "stylus": "^0.42.3",
+    "coffee-script": "^1.7.1",
+    "ejs": "^1.0.0"
   }
 }

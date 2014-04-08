@@ -6,18 +6,18 @@ path    = require('path')
 
 app = express()
 webserver = http.createServer(app)
+basePath = path.join(__dirname)
 
 app.engine('html', require('ejs').renderFile)
 
 app.configure ->
-  basePath = path.join(__dirname, '..')
   app.use('/assets', express.static(basePath + '/.generated/'))
   app.use('/vendor', express.static(basePath + '/bower_components/'))
 
-port = 3002
+port = 3003
 webserver.listen(port)
 
 app.get '/', (req, res) ->
-  res.render('/.generated/index.html')
+  res.render(basePath + '/.generated/index.html')
 
 module.exports = webserver
