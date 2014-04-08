@@ -17,7 +17,8 @@ var paths = {
   assetsBasePath: './app',
   assetsPaths: [
     './app/img/**/*',
-    './app/fonts/**/*'
+    './app/fonts/**/*',
+    './app/**/*.html'
   ],
   assetsOutput: './.generated/'
 };
