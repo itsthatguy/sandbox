@@ -25,6 +25,7 @@ App.ChatsArray = Ember.ArrayProxy.extend
     @chats.pushObject(chat)
     return chat
 
+
   addMessage: (data) ->
     console.log "yep"
 
