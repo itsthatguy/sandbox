@@ -6,6 +6,8 @@
   <link rel="stylesheet" href="/assets/css/main.css">
 </head>
 <body>
+
+
   <script type="text/x-handlebars">
     <main>
       <header>
@@ -15,7 +17,6 @@
       </header>
       {{outlet}}
     </main>
-
   </script>
 
 
@@ -23,8 +24,8 @@
     <p>Please select a chatroom above</p>
   </script>
 
-  <script type="text/x-handlebars" data-template-name="chat">
 
+  <script type="text/x-handlebars" data-template-name="chat">
     {{#scrolling-div id="messages-div" update-when=this}}
       <ul>
         {{#each}}
@@ -36,7 +37,6 @@
   </script>
 
   <script type="text/x-handlebars" data-template-name="chat-tabs">
-
     {{#each}}
       {{view App.ChatTabView}}
     {{else}}
@@ -46,9 +46,11 @@
     <button {{action joinChannel}}>Add Channel</button>
   </script>
 
+
   <script type="text/x-handlebars" data-template-name="chat-tab">
     {{#link-to "chat" name}}{{name}}{{/link-to}}
   </script>
+
 
   <script type="text/x-handlebars" id="components/scrolling-div">
     {{yield}}
