@@ -99,4 +99,4 @@ gulp.task('watch', ['clean','stylus','coffee','assets'], function() {
   gulp.watch(paths.assetsPaths, ['assets']);
 });
 
-gulp.task('default', ['stylus', 'coffee', 'assets']);
+gulp.task('default', ['clean', 'stylus', 'coffee', 'assets']);
