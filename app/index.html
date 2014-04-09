@@ -13,10 +13,7 @@
 
         {{render "chat-tabs" App.chats}}
 
-        <span>Temporary until add channel button is hooked up: </span>
-        {{#link-to "index"}}index{{/link-to}}
-        {{#link-to "chat" "#vikinghug"}}#vikinghug{{/link-to}}
-        {{#link-to "chat" "#switchboard"}}#switchboard{{/link-to}}
+        <span>(Temporary) Note: After adding a channel, click on the channel button to join </span>
       </header>
       {{outlet}}
     </main>
@@ -37,7 +34,7 @@
         {{/each}}
       </ul>
     {{/scrolling-div}}
-    {{ input value=msg id="newMessage" action="sendMessage"}}
+    {{ input value=msg id="newMessage" action="sendMessage" placeholder="Enter a message and hit enter to send" autofocus=""}}
   </script>
 
   <script type="text/x-handlebars" data-template-name="chat-tabs">
