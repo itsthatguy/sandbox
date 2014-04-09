@@ -7,15 +7,20 @@
 </head>
 <body>
   <script type="text/x-handlebars">
-    <h2>Simple chat</h2>
+    <main>
+      <header>
+        <h2>Simple chat</h2>
 
-    {{view App.ChatTabsView}}
+        {{view App.ChatTabsView}}
 
-    {{#link-to "index"}}index{{/link-to}}
-    {{#link-to "chat" "#vikinghug"}}#vikinghug{{/link-to}}
-    {{#link-to "chat" "#switchboard"}}#switchboard{{/link-to}}
+        <span>Temporary until add channel button is hooked up: </span>
+        {{#link-to "index"}}index{{/link-to}}
+        {{#link-to "chat" "#vikinghug"}}#vikinghug{{/link-to}}
+        {{#link-to "chat" "#switchboard"}}#switchboard{{/link-to}}
+      </header>
+      {{outlet}}
+    </main>
 
-    {{outlet}}
   </script>
 
 
@@ -25,24 +30,28 @@
 
   <script type="text/x-handlebars" data-template-name="chat">
 
-
-
-    {{#scrolling-div id="messages-div"}}
+    {{#scrolling-div id="messages-div" update-when=this}}
       <ul>
-      {{#each}}
-        <li>{{this}}</li>
-      {{/each}}
+        {{#each}}
+          <li>{{this}}</li>
+        {{/each}}
       </ul>
     {{/scrolling-div}}
     {{ input value=msg id="newMessage" action="sendMessage"}}
   </script>
 
   <script type="text/x-handlebars" data-template-name="chat-tabs">
-    really?
-    yep
+
     {{#each}}
-      hi
+      {{view App.ChatTabView}}
+    {{else}}
+      <p>No Channels</p>
     {{/each}}
+    <button {{action join}}>Add Channel</button>
+  </script>
+
+  <script type="text/x-handlebars" data-template-name="chat-tab">
+    <a href="/#/chat/{{unbound name}}">{{name}}</a>
   </script>
 
   <script type="text/x-handlebars" id="components/scrolling-div">

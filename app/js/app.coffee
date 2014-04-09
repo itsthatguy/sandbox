@@ -43,9 +43,6 @@ App.chats = App.ChatsArray.create()
 
 
 # ChatController
-App.ChatTabsController = Ember.ArrayController.extend
-
-# ChatController
 App.ChatController = Ember.ArrayController.extend
   needs: "application"
   msg: ""
@@ -70,15 +67,30 @@ App.ScrollingDivComponent = Ember.Component.extend
   scrollIntoView: ->
     this.$().scrollTop(this.$().prop("scrollHeight"))
 
-# ChatTabsView
-App.ChatTabsView = Ember.CollectionView.extend
-  classNames: ["chat-tabs-thing"]
-  content: ["hi", "no"]
-  itemViewClass: App.ChatTabView
+App.ChatsTabsController = Ember.ArrayController.extend
+  itemController: App.chats
 
+
+# ChatTabsView
+App.ChatTabsView = Ember.View.extend
+  tagName: 'ul'
+  classNames: ["chat-tabs-wrapper"]
+  controller: App.chats
+  templateName: "chat-tabs"
+
+
+App.ChatTabsController = Ember.ArrayController.extend
+  actions:
+    joinChannel: ->
+      console.log "huzzah"
 
 App.ChatTabView = Ember.View.extend
-  templateName: "chat-tabs"
+  tagName: 'li'
+  templateName: "chat-tab"
+  classNames: ['active']
+  active: ->
+    console.log "bloop"
+
 
 
 

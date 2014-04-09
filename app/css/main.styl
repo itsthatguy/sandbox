@@ -1,20 +1,62 @@
 white = rgba(205,205,213, 1);
+red = rgba(243, 86, 86, 0.99);
+black = rgba(45,45,53, 1);
+light-black = rgba(65,65,73, 1)
+shadow-color = rgba(5,5,13, 0.2);
 
 body {
-  background: #303038;
+  background: light-black;
+  color: white;
   font-family: "helvetica";
+}
+
+a {
+  color: red;
+  text-decoration: none;
 }
 
 * { box-sizing: border-box; }
 
-#messages-div {
+main {
   position: fixed;
-  top: 120px;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+}
+
+header {
+  box-shadow: 0 4px shadow-color;
+  position: absolute;
+  background: light-black;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 180px;
+  z-index: 100;
+  ul {
+    list-style-type: none;
+    padding-left: 0;
+    li {
+      display: inline-block;
+      padding: 10px;
+      background: red;
+      a { color: black; }
+    }
+  }
+}
+
+#messages-div {
+  background: black;
+  position: absolute;
+  top: 180px;
   right: 0;
   bottom: 60px;
   left: 0;
   color: white;
   padding: 20px;
+  overflow-y: auto;
   ul {
     list-style-type: none;
     padding: 0;
@@ -30,7 +72,7 @@ body {
   background: white;
   border: none;
   box-sizing: border-box;
-  box-shadow: inset 0 4px 0 rgba(5,5,13, 0.2);
+  box-shadow: inset 0 4px 0 shadow-color;
   position: fixed;
   right: 0;
   bottom: 0;
