@@ -58,6 +58,10 @@ App.ChatRoute = Ember.Route.extend
   model: (params, queryParams) ->
     messages = App.chats.joinChat({name: params.name})
     return messages
+  render: ->
+    $("#new-message").focus()
+    @_super()
+
 
 # ScrollingDivComponent
 App.ScrollingDivComponent = Ember.Component.extend
@@ -98,7 +102,4 @@ App.ChatTabView = Ember.View.extend
   classNames: ['active']
   active: ->
     console.log "bloop"
-
-
-
 
