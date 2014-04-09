@@ -85,7 +85,11 @@ App.ChatTabsView = Ember.View.extend
 App.ChatTabsController = Ember.ArrayController.extend
   actions:
     joinChannel: ->
-      console.log "huzzah"
+      reg = /^(#)/
+      name = this.get("msg")
+      unless reg.test(name) then name = "##{name}"
+      App.chats.joinChat({name: name})
+      @set("msg", "")
 
 App.ChatTabView = Ember.View.extend
   tagName: 'li'
