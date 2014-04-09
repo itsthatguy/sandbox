@@ -14,7 +14,7 @@ app.configure ->
   app.use('/assets', express.static(basePath + '/.generated/'))
   app.use('/vendor', express.static(basePath + '/bower_components/'))
 
-port = 3003
+port = process.env.PORT || 3003
 webserver.listen(port)
 
 app.get '/', (req, res) ->
