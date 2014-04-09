@@ -9,12 +9,13 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "./node_modules/.bin/coffee app.coffee",
-    "preinstall": "bower install"
+    "postinstall": "bower install"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^3.5.1"
+    "express": "^3.5.1",
+    "bower": "^1.3.2"
   },
   "repository": {
     "type": "git",
