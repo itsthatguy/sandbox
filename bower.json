@@ -1,9 +1,9 @@
 {
-  "name": "firepit",
-  "version": "0.0.0",
   "authors": [
     "Kevin Altman <kevin@itsthatguy.com>"
   ],
+  "name": "irc-sandbox",
+  "version": "0.0.1",
   "license": "MIT",
   "ignore": [
     "**/.*",

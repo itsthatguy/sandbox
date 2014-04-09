@@ -33,8 +33,6 @@ gulp.task('default', function () {
 // Stylus
 //
 
-
-// Get and render all .styl files recursively
 gulp.task('stylus', function () {
   gulp.src(paths.cssInput)
     .pipe(stylus()
@@ -80,6 +78,7 @@ gulp.task('assets', function() {
     .pipe(gulp.dest(paths.assetsOutput));
 });
 
+
 //
 // Clean
 //
@@ -93,10 +92,11 @@ gulp.task('clean', function() {
 //
 // Watch
 //
+
 gulp.task('watch', ['clean','stylus','coffee','assets'], function() {
   gulp.watch(paths.cssPath, ['stylus']);
   gulp.watch(paths.coffeePath, ['coffee']);
   gulp.watch(paths.assetsPaths, ['assets']);
 });
 
-gulp.task('default', ['clean', 'stylus', 'coffee', 'assets']);
+gulp.task('default', ['stylus', 'coffee', 'assets']);
