@@ -3,6 +3,9 @@
   "version": "0.0.1",
   "description": "",
   "main": "index.coffee",
+  "authors": [
+    "Kevin Altman <kevin@itsthatguy.com>"
+  ],
   "engines": {
     "node": "0.10.x"
   },
