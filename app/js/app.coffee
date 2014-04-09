@@ -13,14 +13,14 @@ App.ChatsArray = Ember.ArrayProxy.extend
 
 
   # created this to avoid overwriting find, until i understand this better
-  getChat: (data) ->
+  joinChat: (data) ->
     chat = App.chats.findBy("name", data.name)
     unless chat?
-      chat = App.chats.joinChat(data)
+      chat = App.chats.addChat(data)
     return chat
 
 
-  joinChat: (data) ->
+  addChat: (data) ->
     chat = App.MessagesArray.create(data)
     @chats.pushObject(chat)
     return chat
@@ -55,7 +55,7 @@ App.ChatController = Ember.ArrayController.extend
 # ChatRoute
 App.ChatRoute = Ember.Route.extend
   model: (params, queryParams) ->
-    messages = App.chats.getChat({name: params.name})
+    messages = App.chats.joinChat({name: params.name})
     return messages
 
 # ScrollingDivComponent

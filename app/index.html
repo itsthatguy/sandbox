@@ -52,7 +52,7 @@
   </script>
 
   <script type="text/x-handlebars" data-template-name="chat-tab">
-    <a href="/#/chat/{{unbound name}}">{{name}}</a>
+    {{#link-to "chat" name}}{{name}}{{/link-to}}
   </script>
 
   <script type="text/x-handlebars" id="components/scrolling-div">
