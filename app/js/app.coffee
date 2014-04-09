@@ -11,14 +11,12 @@ App.ChatsArray = Ember.ArrayProxy.extend
 
     @_super()
 
+
   # created this to avoid overwriting find, until i understand this better
   getChat: (data) ->
     chat = App.chats.findBy("name", data.name)
     unless chat?
       chat = App.chats.joinChat(data)
-
-    # why is this returning undefined?
-    console.log "after", chat
     return chat
 
 
@@ -29,6 +27,8 @@ App.ChatsArray = Ember.ArrayProxy.extend
 
   addMessage: (data) ->
     console.log "yep"
+
+
 
 App.MessagesArray = Ember.ArrayProxy.extend
   init: (data) ->
@@ -69,6 +69,9 @@ App.ScrollingDivComponent = Ember.Component.extend
 
 App.ChatsTabsController = Ember.ArrayController.extend
   itemController: App.chats
+  init: ->
+    @set "content", App.ChatsArray.content
+    ["hi", "no"]
 
 
 # ChatTabsView

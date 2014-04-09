@@ -11,7 +11,7 @@
       <header>
         <h2>Simple chat</h2>
 
-        {{view App.ChatTabsView}}
+        {{render "chat-tabs" App.chats}}
 
         <span>Temporary until add channel button is hooked up: </span>
         {{#link-to "index"}}index{{/link-to}}
@@ -47,7 +47,8 @@
     {{else}}
       <p>No Channels</p>
     {{/each}}
-    <button {{action join}}>Add Channel</button>
+    {{ input value=msg id="newChannel" action="joinChannel"}}
+    <button {{action joinChannel}}>Add Channel</button>
   </script>
 
   <script type="text/x-handlebars" data-template-name="chat-tab">
